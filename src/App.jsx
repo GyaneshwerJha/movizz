@@ -7,7 +7,6 @@ import { fetchDataFromApi } from './utils/api';
 import { useSelector, useDispatch } from 'react-redux'
 import { getApiConfiguration, getGenres } from './store/homeSlice';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import TermsOfUse from './components/termsOfUse/TermsOfUse';
 
 function App() {
   const dispatch = useDispatch();
