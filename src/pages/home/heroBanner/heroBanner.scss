@@ -1,0 +1,136 @@
+@import "../../../mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.heroBanner {
+    width: 100%;
+    height: 28.125rem;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include md {
+        height: 43.75rem;
+    }
+
+    .backdrop-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        overflow: hidden;
+
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    .opacity-layer {
+        width: 100%;
+        height: 15.625rem;
+        background: linear-gradient(180deg,
+                rgba(4, 21, 45, 0) 0%,
+                #04152d 79.17%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .heroBannerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        max-width: 62.5rem;
+        margin: 0 auto;
+
+        .title {
+            font-size: 2.125rem;
+            font-weight: 600;
+            margin-bottom: 0.625rem;
+
+            @include md {
+                margin-bottom: 0.625rem;
+                font-size: 3.625rem;
+            }
+        }
+
+        .subTitle {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 1.875rem;
+
+            @include md {
+                font-size: 1.5rem;
+            }
+        }
+
+        .searchInput {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            input {
+                width: calc(100% - 6.25rem);
+                height: 3.125rem;
+                background-color: white;
+                outline: 0;
+                border: 0;
+                border-radius: 1.875rem 0 0 1.875rem;
+                padding: 0 0.9375rem;
+                font-size: 0.875rem;
+
+                @include md {
+                    width: calc(100% - 9.375rem);
+                    height: 3.75rem;
+                    font-size: 1.25rem;
+                    padding: 0 1.875rem;
+                }
+            }
+
+            button {
+                width: 6.25rem;
+                height: 3.125rem;
+                background: var(--gradient);
+                color: white;
+                outline: 0;
+                border: 0;
+                border-radius: 0 1.875rem 1.875rem 0;
+                font-size: 1rem;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: 0.5s;
+                background-size: 200% auto;
+                color: white;
+
+                &:hover {
+                    background-position: right center;
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                @include md {
+                    width: 9.375rem;
+                    height: 3.75rem;
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
+}
